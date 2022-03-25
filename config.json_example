@@ -1,0 +1,28 @@
+{
+    "server":{
+        "port": 21, //you can change port here.
+        "bindto":"", //leave blank for default
+        "maxcons":256, // limit connection number
+        "maxipcons":5 //max connection per ip
+    },
+        "welcome_message":{
+        "filename":"Welcome.txt",
+        "file-content":["Welcome MajliFTP server, $USER$.","This is your new cloud storage!,"With us, You can store 100GB worth of data","in every file extension!","","Have a nice day!"] // This must be in list format, otherwise program will crash.
+        // one entry in list = one line 
+    },
+    // We need somwhere to store data from users
+    "data":"FTP", //NO SLASHES AT THE END!!!!! slashes are added in the program
+    // admin users, has full acces for every user directory.
+    "adminuser":{
+        "enabled":true, //here this is disabled, but enable it and values below.
+        "username": "admin",
+        "password":"admin"
+    },
+    "users":{
+        "marlin":{
+            "password":"onaboat",
+            "enabled":false //what this does is it will register the user to folder with file called "User Disabled". 
+                                    // you can check the content of this file at (data folder)/forbidden
+        }
+    }
+}

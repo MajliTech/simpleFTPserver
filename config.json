@@ -1,0 +1,35 @@
+{
+    "server": {
+        "port": 21,
+        "bindto": "",
+        "maxcons": 256,
+        "maxipcons": 5
+    },
+    "welcome_message": {
+        "filename": "Welcome.txt",
+        "file-content": [
+            "Welcome MajliFTP server, $USER$.",
+            "This is your new cloud storage!",
+            "With us, You can store 100GB worth of data",
+            "in every file extension!",
+            "",
+            "Have a nice day!"
+        ]
+    },
+    "data": "FTP",
+    "adminuser": {
+        "enabled": true,
+        "username": "admin",
+        "password": "admin"
+    },
+    "users": {
+        "marlin": {
+            "password": "onaboat",
+            "enabled": true
+        },
+        "derlin": {
+            "password": "onabike",
+            "enabled": false
+        }
+    }
+}
