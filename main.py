@@ -8,18 +8,13 @@ import json
 
 
 
-def main():
+def MainProgram():
     #Config file
     if os.path.isfile("config.json"):
         global config
-        f = open("config.json")
-        #Parse da susi json momynt
-        t = ""
-        for i in f.readlines():
-            t = t+i.replace("\n","")
-        f.close()
-        config = json.loads(t)
-        del t
+        tempFile = open("config.json")
+        config = json.loads(tempFile.read())
+        del tempFile
     authorizer = DummyAuthorizer()
 
     if config["adminuser"]["enabled"]:
@@ -56,13 +51,7 @@ def main():
     handler.keyfile = 'server.key'
 
     handler.authorizer = authorizer
-
-    # Define a customized banner (string returned when client connects)
     handler.banner = "ready"
-
-    # Optionally specify range of ports to use for passive connections.
-    # handler.passive_ports = range(60000, 65535)
-
     address = (config["server"]["bindto"], config["server"]["port"])
     server = FTPServer(address, handler)
 
@@ -73,4 +62,4 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    MainProgram()
